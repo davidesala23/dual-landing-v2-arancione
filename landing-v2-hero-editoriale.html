@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex" />
     <title>Hero editoriale · Landing V2 (prototipo)</title>
-    <!-- Scuro paints dark from the first frame, before the script and its CSS arrive: ?v= picks the
-         palette and &modo= the mode as initialConfig does (config.ts lists the palettes in this
-         order), and main.tsx keeps both in sync. Attuale's dark page is below the logo's black. -->
+    <!-- Scuro, the default, paints dark from the first frame, before the script and its CSS arrive:
+         ?v= picks the palette and &modo= the mode as initialConfig does (config.ts lists the palettes
+         in this order), and main.tsx keeps both in sync. Attuale's dark page is below the logo's
+         black. -->
     <script>
       {
         const params = new URLSearchParams(location.search);
@@ -16,7 +17,7 @@
         const index = Number.isNaN(v) ? 0 : v - 1;
         const html = document.documentElement;
         html.dataset.palette = palettes[((index % 4) + 4) % 4];
-        html.dataset.mode = params.get("modo") === "scuro" ? "scuro" : "chiaro";
+        html.dataset.mode = params.get("modo") === "chiaro" ? "chiaro" : "scuro";
       }
     </script>
     <style>html[data-mode=scuro],html[data-mode=scuro] body{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark;background:oklch(18.2% 0 0)}html[data-mode=scuro][data-palette=attuale],html[data-mode=scuro][data-palette=attuale] body{background:oklch(13% 0 0)}</style>
@@ -41,7 +42,7 @@
       type="font/woff2"
       crossorigin
     />
-    <script type="module" crossorigin src="./assets/landing-v2-hero-editoriale-BkJGjYr-.js"></script>
+    <script type="module" crossorigin src="./assets/landing-v2-hero-editoriale-BJnN2WzN.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/landing-v2-hero-editoriale-_0-2fu1b.css">
   </head>
   <body>
